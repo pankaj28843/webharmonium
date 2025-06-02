@@ -3,16 +3,14 @@
 A browser-based harmonium that can be played using either your computer keyboard or any MIDI keyboard. This fork preserves the original functionality by [Rajaraman Iyer](https://github.com/rajaramaniyer) while extending compatibility to all MIDI keyboards (removing restrictive event listeners). Modifications were developed with the assistance of ChatGPT to streamline MIDI handling.
 
 ## Demo
-  - This Fork (Modified) Demo
+  - This Fork (Modified) Demo: https://pankaj28843.github.io/webharmonium/
   - Original Demo by Rajaraman Iyer: https://rajaramaniyer.github.io/webharmonium.html
 
 ## Overview
 
 This project allows you to play harmonium samples in the browser, either via computer keyboard (mapped to specific MIDI notes) or by plugging in any compliant MIDI keyboard. When you press a key (or a MIDI key), the harmonium audio buffer is detuned and looped to simulate a real harmonium’s reed sound.
-  - Original Source:
-https://github.com/rajaramaniyer/rajaramaniyer.github.io/blob/ac4aa45/webharmonium.html
-  - Original Demo:
-https://rajaramaniyer.github.io/webharmonium.html
+  - Original Source: https://github.com/rajaramaniyer/rajaramaniyer.github.io/blob/ac4aa45/webharmonium.html
+  - Original Demo: https://rajaramaniyer.github.io/webharmonium.html
 
 This fork’s primary change was to replace the original, more restrictive MIDI event listeners so that any standard MIDI keyboard can be selected and used. ChatGPT was used to refactor the JavaScript handling of MIDI messages—removing hard-coded event filters and enabling a dynamic dropdown of all available MIDI inputs.
 

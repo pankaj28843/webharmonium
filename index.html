@@ -4,6 +4,17 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Web Harmonium</title>
+  <base href="./" />
+  <link rel="canonical" href="https://pankaj28843.github.io/webharmonium/" />
+  <meta name="description" content="A browser-based harmonium that can be played using either your computer keyboard or any MIDI keyboard. This fork preserves the original functionality by Rajaraman Iyer while extending compatibility to all MIDI keyboards (removing restrictive event listeners). Modifications were developed with the assistance of ChatGPT to streamline MIDI handling." />
+  <meta name="author" content="Pankaj" />
+  <meta name="keywords" content="harmonium, webharmonium, github, web, webmidi, midi, keyboard" />
+  <meta name="robots" content="index, follow" />
+  <meta name="sitemap" content="./sitemap.xml" />
+  <meta name="googlebot" content="index, follow" />
+  <meta name="bingbot" content="index, follow" />
+  <meta name="yandexbot" content="index, follow" />
+  <link rel="icon" href="./favicon.ico" />
 
   <!-- W3.CSS and Font Awesome for styling -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
@@ -133,7 +144,7 @@
     // ------------------------------------------------------------------------
     // Configuration / Globals
     // ------------------------------------------------------------------------
-    const sampleURL = 'harmonium-kannan-orig.wav';
+    const sampleURL = './harmonium-kannan-orig.wav';
     const debug = false;
 
     let context = null;
@@ -340,7 +351,7 @@
     function initReverbNode() {
       reverbNode = context.createConvolver();
       const xhr = new XMLHttpRequest();
-      xhr.open('GET', 'reverb.wav', true);
+      xhr.open('GET', './reverb.wav', true);
       xhr.responseType = 'arraybuffer';
       xhr.onload = () => {
         context.decodeAudioData(
@@ -575,6 +586,16 @@
           gainNode.disconnect(reverbNode);
         } catch (e) { /* already disconnected */ }
       }
+    }
+  </script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker
+          .register("./serviceworker.js")
+          .then(res => console.log("service worker registered"))
+          .catch(err => console.log("service worker not registered", err));
+      });
     }
   </script>
 </head>

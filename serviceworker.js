@@ -1,17 +1,17 @@
 const staticDevCoffee = "web-harmonium";
 const assets = [
-  "/",
-  "/index.html",
-  "/harmonium-kannan-orig.wav",
-  "/reverb.wav",
-  "/serviceworker.js",
-  "/favicon.ico"
+  "./",
+  "./index.html",
+  "./harmonium-kannan-orig.wav",
+  "./reverb.wav",
+  "./serviceworker.js",
+  "./favicon.ico"
 ];
 
 self.addEventListener("install", installEvent => {
   installEvent.waitUntil(
     caches.open(staticDevCoffee).then(cache => {
-      cache.addAll(assets);
+      return cache.addAll(assets);
     })
   );
 });
